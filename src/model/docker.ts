@@ -40,7 +40,15 @@ class Docker {
     additionalVariables: StringKeyValuePair[] = [],
     entrypointBash: boolean = false,
   ): string {
-    const { workspace, actionFolder, runnerTempPath, sshAgent, gitPrivateToken, dockerWorkspacePath } = parameters;
+    const {
+      workspace,
+      actionFolder,
+      runnerTempPath,
+      sshAgent,
+      gitPrivateToken,
+      dockerWorkspacePath,
+      dockerMemoryLimit,
+    } = parameters;
 
     const githubHome = path.join(runnerTempPath, '_github_home');
     if (!existsSync(githubHome)) mkdirSync(githubHome);
@@ -54,6 +62,7 @@ class Docker {
             ${ImageEnvironmentFactory.getEnvVarString(parameters, additionalVariables)} \
             --env UNITY_SERIAL \
             --env GITHUB_WORKSPACE=${dockerWorkspacePath} \
+            ${dockerMemoryLimit ? `--memory="${dockerMemoryLimit}g"` : ``} \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \
             ${sshAgent ? '--env SSH_AUTH_SOCK=/ssh-agent' : ''} \
             --volume "${githubHome}":"/root:z" \

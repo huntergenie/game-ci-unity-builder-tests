@@ -213,6 +213,11 @@ inputs:
     description:
       'The path to mount the workspace inside the docker container. For windows, leave out the drive letter. For example
       c:/github/workspace should be defined as /github/workspace'
+  dockerMemoryLimit:
+    default: '2'
+    required: false
+    description:
+      'The limit of memory which the docker container can use'
 
 outputs:
   volume:

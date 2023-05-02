@@ -216,6 +216,12 @@ class Input {
     return Input.getInput('dockerWorkspacePath') || '/github/workspace';
   }
 
+  static get dockerMemoryLimit() {
+    const input = Input.getInput('dockerMemoryLimit') || '';
+
+    return input !== '' ? input : '';
+  }
+
   public static ToEnvVarFormat(input: string) {
     if (input.toUpperCase() === input) {
       return input;
