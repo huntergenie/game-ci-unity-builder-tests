@@ -216,8 +216,7 @@ inputs:
   dockerMemoryLimit:
     default: '2'
     required: false
-    description:
-      'The limit of memory which the docker container can use'
+    description: 'The limit of memory which the docker container can use'
 
 outputs:
   volume:
