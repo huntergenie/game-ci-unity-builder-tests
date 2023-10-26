@@ -129,7 +129,6 @@ echo ""
 
 /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app/Contents/MacOS/Unity \
   -logFile - \
-  -quit \
   -batchmode \
   -nographics \
   -username "$UNITY_EMAIL" \
