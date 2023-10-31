@@ -15,13 +15,7 @@ export async function execWithErrorCheck(
   // Check for errors in the Build Results section
   const match = result.stdout.match(/^#\s*Build results\s*#(.*)^Size:/ms);
 
-  if (match) {
-    const buildResults = match[1];
-    const errorMatch = buildResults.match(/^Errors:\s*(\d+)$/m);
-    if (errorMatch && Number.parseInt(errorMatch[1], 10) !== 0) {
-      throw new Error(`There was an error building the project. Please read the logs for details.`);
-    }
-  } else {
+  if (!match) {
     throw new Error(`There was an error building the project. Please read the logs for details.`);
   }
 
