@@ -133,7 +133,6 @@ Write-Output ""
 # in double quotes.  To avoid this, parse $Env:CUSTOM_PARAMETERS into an array, while respecting any quotations within the string.
 $_, $customParametersArray = Invoke-Expression('Write-Output -- "" ' + $Env:CUSTOM_PARAMETERS)
 $unityArgs = @(
-    "-quit",
     "-batchmode",
     "-nographics",
     "-silent-crashes",
