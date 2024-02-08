@@ -30,7 +30,7 @@ apt-get update && apt-get install -y \
     libsm-dev
 
 echo "hunter installing pip"
-apt update && apt install python3-pip
+apt update && apt install --no-input python3-pip
 
 echo "hunter installing wheel"
 pip3 install --no-input https://d1v5e8dxjkq76c.cloudfront.net/genies-validation/genies_validation-0.0.1-py3-none-any.whl
