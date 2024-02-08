@@ -33,7 +33,7 @@ echo "hunter installing pip"
 apt update && apt install python3-pip
 
 echo "hunter installing wheel"
-pip3 install https://d1v5e8dxjkq76c.cloudfront.net/genies-validation/genies_validation-0.0.1-py3-none-any.whl
+pip3 install --no-input https://d1v5e8dxjkq76c.cloudfront.net/genies-validation/genies_validation-0.0.1-py3-none-any.whl
 
 echo "hunter running py script"
 python3 -c "import bpy;"
