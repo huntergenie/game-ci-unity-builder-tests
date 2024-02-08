@@ -13,6 +13,21 @@ mkdir -p "$ACTIVATE_LICENSE_PATH"
 source /steps/set_extra_git_configs.sh
 source /steps/set_gitcredential.sh
 source /steps/activate.sh
+
+apt-get update && apt-get install -y \
+    libx11-dev \
+    libxxf86vm-dev \
+    libxcursor-dev \
+    libxi-dev \
+    libxrandr-dev \
+    libxinerama-dev \
+    libegl-dev \
+    libwayland-dev \
+    wayland-protocols \
+    libxkbcommon-dev \
+    libdbus-1-dev \
+    libsm-dev
+    
 source /steps/build.sh
 source /steps/return_license.sh
 
