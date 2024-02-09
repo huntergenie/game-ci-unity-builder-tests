@@ -15,6 +15,10 @@ source /steps/set_gitcredential.sh
 source /steps/activate.sh
 echo "hunter installing libs"
 
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+echo "LD_LIBRARY_PATH: "
+echo $LD_LIBRARY_PATH
+
 apt-get update && apt-get install -y \
     libx11-dev \
     libxxf86vm-dev \
@@ -28,10 +32,6 @@ apt-get update && apt-get install -y \
     libxkbcommon-dev \
     libdbus-1-dev \
     libsm-dev
-
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-echo "LD_Lib_path: "
-echo $LD_LIBRARY_PATH
 
 echo "hunter installing pip"
 apt update --yes && apt install --yes python3-pip
