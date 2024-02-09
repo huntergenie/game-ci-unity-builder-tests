@@ -15,23 +15,11 @@ source /steps/set_gitcredential.sh
 source /steps/activate.sh
 echo "hunter installing libs"
 
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
-echo "LD_LIBRARY_PATH: "
-echo $LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+#echo "LD_LIBRARY_PATH: "
+#echo $LD_LIBRARY_PATH
 
-apt-get update && apt-get install -y \
-    libx11-dev \
-    libxxf86vm-dev \
-    libxcursor-dev \
-    libxi-dev \
-    libxrandr-dev \
-    libxinerama-dev \
-    libegl-dev \
-    libwayland-dev \
-    wayland-protocols \
-    libxkbcommon-dev \
-    libdbus-1-dev \
-    libsm-dev
+
 
 echo "hunter installing pip"
 apt update --yes && apt install --yes python3-pip
