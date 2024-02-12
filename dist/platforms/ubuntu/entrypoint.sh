@@ -13,7 +13,7 @@ mkdir -p "$ACTIVATE_LICENSE_PATH"
 source /steps/set_extra_git_configs.sh
 source /steps/set_gitcredential.sh
 source /steps/activate.sh
-echo "hunter installing libs"
+#echo "hunter installing libs"
 
 #export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 #echo "LD_LIBRARY_PATH: "
@@ -21,16 +21,16 @@ echo "hunter installing libs"
 
 
 
-echo "hunter installing pip"
-apt update --yes && apt install --yes python3-pip
+#echo "hunter installing pip"
+#apt update --yes && apt install --yes python3-pip
 
-echo "hunter installing wheel"
-pip3 install --no-input https://d1v5e8dxjkq76c.cloudfront.net/genies-validation/genies_validation-0.0.1-py3-none-any.whl
+#echo "hunter installing wheel"
+#pip3 install --no-input https://d1v5e8dxjkq76c.cloudfront.net/genies-validation/genies_validation-0.0.1-py3-none-any.whl
 
-echo "hunter running py script"
-python3 -c "import bpy;"
+#echo "hunter running py script"
+#python3 -c "import bpy;"
 
-echo "hunter import done running build"
+#echo "hunter import done running build"
 
 source /steps/build.sh
 source /steps/return_license.sh
